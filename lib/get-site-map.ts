@@ -37,7 +37,10 @@ async function getAllPagesImpl(
   const pageMap = await getAllPagesInSpace(
     rootNotionPageId,
     rootNotionSpaceId,
-    getPage
+    getPage,
+    {
+      maxDepth: 2
+    }
   )
 
   const canonicalPageMap = Object.keys(pageMap).reduce(
